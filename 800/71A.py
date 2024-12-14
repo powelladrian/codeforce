@@ -5,7 +5,7 @@
 n = int(input())
 
 # Read and parse the words into a list
-words = [input().strip() for word in range(n)]
+words = [input().strip() for _ in range(n)]
 
 # Final list of words
 results = []
@@ -13,7 +13,10 @@ results = []
 for word in words:
     if len(word) > 10:
         #add logic for changing word so that it is the first and last letter and num of letters inbetween
-    elif len(word) < 11:
-        results.append(word)
+        word_len = (len(word) - 2)
+        word  = word[0] + str(word_len) + word[-1]
+        results.append(word.lower())
     else:
-        #~
+        results.append(word.lower())
+
+print("\n".join(results)) # Print all results
