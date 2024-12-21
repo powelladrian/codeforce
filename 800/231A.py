@@ -1,13 +1,8 @@
 n = int(input())
+count = 0
 
-# Read and parse the questions
-questions = [input().strip() for _ in range(n)]
+for _ in range(n):
+    if sum(map(int, input().split())) >= 2:
+        count += 1
 
-# Initiliaze the variables
-solvable_questions = 0
-
-for question in questions:
-    if sum(question) > 2:
-        solvable_questions += 1
-
-print("\n"+ solvable_questions)
+print("\n"+ str(count))
